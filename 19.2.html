@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let users = [
+ {
+ id: 167464,
+ firstName: "Jimmy",
+ lastName: "Arnold",
+ email: "jimmya@gmail.com",
+ },
+ {
+ id: 578447,
+ firstName: "Martha",
+ lastName: "Goldman",
+ email: "gold@hotmail.com",
+ },
+ {
+ id: 864578,
+ firstName: "Tim",
+ lastName: "Burton",
+ email: "timmy.hotmail.com",
+ },
+ ];
+
+let body= document.querySelector('body')
+// let newol=document.createElement('ol')
+ 
+ let ol=document.createElement('ol')
+ body.appendChild(ol)
+
+ function arr(item){
+        users.forEach((user)=>{
+         li1=document.createElement("li")
+         let txt= user.firstName + ' ' + user.lastName;
+         li1.append(txt);
+         li1.dataset.id=user.id;
+         item.appendChild(li1)
+     })
+     return item
+ }
+arr(ol)
+ol.style.listStyleType='none';
+console.log(ol)
+
+
+
+    </script>
+</body>
+</html>
