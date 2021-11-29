@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>why are you interested in this position</h2>
+    <textarea name="text" id="text" cols="30" rows="10" minlength="100"></textarea>
+    <p class="message"></p>
+    <button>submit</button>
+    
+</body>
+<script>
+    const h2=document.querySelector('h2')
+    const text=document.querySelector('textarea')
+    text.style.background='red'
+    const btn=document.querySelector('button')
+    let message= document.querySelector('p')
+    text.minLength-100;
+
+    btn.addEventListener('click', function(){
+       if( text.value.length<100){
+           message.textContent='you have to enter at least 100 characters'
+       }else{
+           message.textContent='';
+       }
+       
+        
+    })
+    
+</script>
+</html>

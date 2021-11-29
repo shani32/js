@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new game</title>
+</head>
+<body>
+    <script>
+    
+        let text=document.createElement('input')
+        text.type= 'text'
+        text.placeholder='pick a number'
+        let button= document.createElement('input')
+        button.type='submit';
+        document.body.append(text, button);
+        let image= document.createElement('div')
+        document.body.appendChild(image);
+
+        button.addEventListener('click', ()=>{
+           let regex= /^\d+$/gi;
+           if (regex.test(text.value)){
+               let num= +text.value;
+               image.innerHTML='';
+               for(let i=0; i< num; i++){
+                   image.innerHTML+= ':)'
+                   text.value='';
+               }
+               }else{
+                   alert('please enter valid number')
+                   text.value=''
+               }
+           })
+      
+
+
+    </script>
+    
+</body>
+</html>

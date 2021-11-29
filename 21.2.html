@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="inc">+</button>
+    <button class="dec">-</button>
+    <h2>some text</h2>
+    <script>
+        let btnInc= document.querySelector( '.inc')
+        let btnDec= document.querySelector( '.dec')
+        let header=document.querySelector('h2')
+
+        
+        
+            btnInc.addEventListener('click', function(){
+           const computed=getComputedStyle(header).getPropertyValue('font-size')
+            currentSize = parseInt(computed); 
+            // if(currentSize<50|| currentSize>6){
+            // header.style.fontSize = (currentSize + 4) + 'px'; 
+            // }
+                
+        })
+
+            btnDec.addEventListener('click', function(){
+            
+            const computed=getComputedStyle(header).getPropertyValue('font-size')
+           
+            currentSize = parseInt(computed); 
+            console.log(currentSize)
+            header.style.fontSize = (currentSize - 4) + 'px';
+            
+            
+        })
+    </script>
+</body>
+</html>
