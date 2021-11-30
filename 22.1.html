@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="signup" action="">
+        Name<input type="text" name="name" id="name" placeholder="enter your name"><br>
+        Age<input type="number" name="age" id="age" placeholder="what is your age"><br>
+        Email<input type="email" name="email" id="email" placeholder="what is your email">
+        <button>submit</button>
+        <p></p>
+    </form>
+    <script>
+        const name=document.querySelector('#name')
+        const age=document.querySelector('#age')
+        const email=document.querySelector('#email')
+        const submit=document.querySelector('button')
+        const form=document.querySelector('#signup')
+        let message= document.querySelector('p')
+        form.addEventListener('submit', function(e){
+         
+        // message = name.value +' '+ age.value +' '+ email.value +'are you sure the details are true';
+        // form.append(message)
+        let result=confirm(`are your name is ${name.value} age ${age.value} and your mail ${email.value}` ); // true if OK is pressed
+        if(result){
+            message.innerHTML='congrats'
+            form.textContent.valueOf.name='';
+            
+        } else{
+            message.innerHTML='you can correct the page'
+            e.preventDefault();
+        }
+            
+    
+        })
+
+
+        
+       
+
+    </script>
+    
+</body>
+</html>

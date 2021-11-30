@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            display: none;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+    Name<input type="text" name="name" id="name" placeholder="enter your name"><br>
+    veggi food<input type="checkbox" name="veggi" id="veggi">
+    <img src="./basket.jpg" alt="">
+    </form>
+    <script>
+    const name=document.querySelector('#name')
+    const checkbox=document.querySelector('#veggi')
+    const image= document.querySelector('img')
+    checkbox.addEventListener('click', function(){
+        if( image.style.display==='block'){
+            image.style.display="none"
+        }else {
+            image.style.display='block'
+        }
+    })
+    </script>
+</body>
+</html>
