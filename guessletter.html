@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>can you guess my letter?</h1>
+        <p>Guess what letter I'm thinking of:</p>
+        <p id="guessed"></p>
+    </div>
+    <script>
+
+        let letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+        let letterToGuess;
+        let guessedLetters=[];
+        let letterguess;
+
+
+        function newGame() {
+            letterToGuess = letters[Math.floor(Math.random() * letters.length)]
+            guessedLetters = [];
+            console.log("Letter to guess: " + letterToGuess);
+        }
+        function display() {
+            letterguess = document.querySelector('#guessed')
+            letterguess.innerHTML = guessedLetters.join(',')
+
+        }
+        window.addEventListener('keyup',function(event) {
+        let guess = event.key;
+        if (guess === letterToGuess) {
+        win();
+        // } else if (guess === guessedLetters) {
+        // alert();
+        } else {
+        wrongGuess(guess);
+        }
+
+         display();
+        })
+    
+
+        function win() {
+            alert('you win')
+            newGame()
+        }
+        function wrongGuess(guess){
+            // let letter = ""
+            guessedLetters.push(guess)
+        }
+        
+        newGame()
+        display();
+    </script>
+
+</body>
+
+</html>
