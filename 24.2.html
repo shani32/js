@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Pokemon(pokemonName, pokemonType, pokemonAttackList){
+           this.name= pokemonName;
+            this.type=pokemonType;
+            this.attackList=pokemonAttackList;
+
+        }
+        let pokemon1= new Pokemon('dudu', 'align', ['flame', 'electricity'])
+        let pokemon2= new Pokemon('omer', 'human', ['getBigger', 'sleep'])
+        let pokemon3= new Pokemon('dana', 'beast', ['dissapear', 'flame'])
+
+       Pokemon.prototype.callPokemon= function(){
+         console.log(`I choose you, ${this.name}` ) 
+       } 
+
+       Pokemon.prototype.attack= function(attackNumber){
+         console.log(` ${this.name} used ${this.attackList[attackNumber]}` ) 
+       } 
+
+       pokemon1.callPokemon();
+       pokemon2.callPokemon();
+       pokemon3.callPokemon();
+
+       pokemon1.attack(1);
+       pokemon2.attack(0);
+       pokemon3.attack(0);
+    </script>
+</body>
+</html>

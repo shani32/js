@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="element">element</div>
+  <script>
+      //q.1 it refer to the window cause it is global scope
+    //   console.log(this);
+      //q.2 it refer to the object this time but dont print the name of the object. we can
+      //lose the arrow function and the : of the property of the function so it will work
+const myObj = {  
+ name: "Timmy",
+ greet() {
+ console.log(`Hello ${this.name}`);
+ },
+ 
+};
+// myObj.greet();
+
+//q.3 i think it refer to the function that is empty. it has noting to append to
+const myFuncDec = function () {
+ console.log(this);
+};
+console.log(myFuncDec)
+
+
+//q.4 there is nothing to the left so it refer to the window because it is arrow function
+const myFuncArrow = () => {
+ console.log(this);
+};
+myFuncArrow();
+//q.5 it will give me window because it is an arrow function. to change it 
+//i can make it regular function+ we needed to add click.
+document.querySelector(".element").addEventListener('click',function()  {
+ console.log(this)});
+
+
+  </script>
+
+</body>
+</html>
